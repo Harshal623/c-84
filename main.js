@@ -4,7 +4,9 @@ rover_x = 100
 rover_y = 150
 rover_width = 100
 rover_height = 100
-background_image = "mars.jpg"
+Nasa_array = ["mars.jpg", "Mars1.jpeg", "Mars2.jpeg", "Mars3.jpeg", "Mars4.jpeg"]
+random_num = Math.floor(Math.random() * 5)
+background_image = Nasa_array[random_num]
 rover_image = "rover.png"
 function add(){
     bg_img = new Image()
@@ -39,5 +41,33 @@ function My_keydown(e){
     if (keypressed == "39"){
         console.log("right key is pressed")
         Right()
+    }
+}
+function Up(){
+    if (rover_y >= 0){
+        rover_y -= 10
+        uploadbg()
+        uploadrover()
+    }
+}
+function Down(){
+    if (rover_y <= 500){
+        rover_y += 10
+        uploadbg()
+        uploadrover()
+    }
+}
+function Left(){
+    if (rover_x >= 0){
+        rover_x -= 10
+        uploadbg()
+        uploadrover()
+    }
+}
+function Right(){
+    if (rover_x <= 700){
+        rover_x += 10
+        uploadbg()
+        uploadrover()
     }
 }
